@@ -21,8 +21,12 @@ export default function Home() {
   function clickSound() {
     setIsOn(!isOn);
   }
+  const [isCrown, setIsCrown] = useState(false);
+  function clickCrown() {
+    setIsCrown(!isCrown);
+  }
   return (
-    <main className="sm:w-[414px] w-[100vw] sm:h-[896px] h-[100vh] bg-[url('/bg.png')] bg-cover md:bg-contain bg-center relative overflow-hidden">
+    <main className="main-screen bg-[url('/bg.png')]">
       <div className="w-[60%] h-[27%] z-[3] absolute left-4 top-4 flex flex-col items-start gap-2">
         <Name className="h-4/5" />
         <div className="h-1/5 flex flex-row gap-3 justify-start items-center drop-shadow-2xl">
@@ -40,7 +44,9 @@ export default function Home() {
         </div>
       </div>
       <JoelBig className="w-[420px] absolute right-0 -top-12 z-[2]" />
-      <Crown className="w-32 absolute z-[2] right-6 -top-4 rotate-[16deg] animate-pulse drop-shadow-xl" />
+      <button onClick={clickCrown}>
+      <Crown className={`w-32 absolute z-[2] right-6 rotate-[16deg] animate-pulse drop-shadow-xl transition ease-in-out ${isCrown ? "-top-6" : "top-2"}`}/>
+      </button>
       <img
         src="/kyrgyztan-flag.svg"
         alt=""
@@ -52,11 +58,11 @@ export default function Home() {
       />
       <button
         onClick={clickSound}
-        className="absolute z-[3] h-1/5 w-1/2 left-0 bottom-72"
+        className="absolute z-10 h-1/5 w-1/2 left-0 bottom-72"
       >
         {isOn ? <SoundOn className="w-3/5" /> : <SoundOff className="w-3/5" />}
       </button>
-      <TheGoat className="w-64 absolute z-[3] -left-2 bottom-6 rotate-3" />
+      <TheGoat className="w-64 absolute z-[3] -left-2 bottom-6 rotate-3 shaking" />
     </main>
   );
 }
