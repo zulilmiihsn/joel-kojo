@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .main-screen {
-    @apply sm:w-[414px] w-[100vw] sm:h-[896px] h-[100dvh] bg-cover md:bg-contain bg-center relative overflow-hidden
+    @apply sm:w-[414px] w-[100vw] sm:h-[896px] h-[100vh] bg-cover md:bg-contain bg-center relative overflow-hidden
 }
 
 .shaking {
