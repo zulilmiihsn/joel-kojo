@@ -44,8 +44,8 @@ export default function Home() {
         </div>
       </div>
       <JoelBig className="w-[420px] absolute right-0 -top-12 z-[2]" />
-      <button onClick={clickCrown}>
-      <Crown className={`w-32 absolute z-[2] right-6 rotate-[16deg] animate-pulse drop-shadow-xl transition ease-in-out ${isCrown ? "-top-6" : "top-2"}`}/>
+      <button onClick={clickCrown} className={`absolute z-[2] right-6 rotate-[16deg] animate-pulse drop-shadow-xl transition ease-in-out ${isCrown ? "-top-6" : "top-2"}`}>
+      <Crown className={`w-32`}/>
       </button>
       <img
         src="/kyrgyztan-flag.svg"
