@@ -2,30 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.floating {
+  animation: floating 3s infinite ease-in-out;
+}
+
 .main-screen {
     @apply sm:w-[414px] w-[100vw] h-[100vh] bg-cover md:bg-contain bg-center relative overflow-hidden
 }
 
-.shaking {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0);
-    animation-iteration-count: infinite;
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }    
 }
-
-@keyframes shake {
-    10%, 90% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    
-    20%, 80% {
-      transform: translate3d(2px, 0, 0);
-    }
-  
-    30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
-    }
-  
-    40%, 60% {
-      transform: translate3d(4px, 0, 0);
-    }
-  }

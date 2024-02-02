@@ -1,28 +1,46 @@
 import { EB_Garamond } from "next/font/google";
 const garamond = EB_Garamond({
   subsets: ["latin"],
-  weight: "700"
-})
+  weight: "700",
+});
 
 export default function Home() {
   return (
     <main className="main-screen bg-[url('/bg.webp')]">
       <div className="relative main-screen grid">
-        <h1 className={`absolute top-8 inset-x-0 text-center text-white text-2xl tracking-[.50em] ${garamond.className}`}>THE GOAT</h1>
-        <img src="button.webp" alt="" className="w-[8%] absolute left-2 -top-2 z-[2]" />
-        <img src="goat.webp" alt="" className="w-[40%] absolute top-44"/>
-        <img src="ball.webp" alt="" className="w-[40%] absolute right-0 top-64"/>
-        <img src="star.webp" alt="" className="w-[40%] absolute right-0 top-16"/>
+        <h1
+          className={`absolute top-8 inset-x-0 text-center text-white text-2xl tracking-[.50em] ${garamond.className}`}
+        >
+          THE GOAT
+        </h1>
         <img
-          src="/crown.webp"
+          src="button.webp"
           alt=""
-          className="w-[30%] justify-self-center top-[200px] absolute z-[1]"
+          className="w-[8%] absolute left-2 -top-2 z-[2]"
         />
         <img
-          src="main.webp"
+          src="goat.webp"
           alt=""
-          className="w-[85%] justify-self-center -bottom-2 absolute z-[0]"
+          className="w-[40%] absolute top-44 z-[2] floating"
         />
+        <img
+          src="ball.webp"
+          alt=""
+          className="w-[40%] absolute right-0 top-64 z-[2] floating"
+        />
+        <img
+          src="star.webp"
+          alt=""
+          className="w-[40%] absolute right-0 top-16 z-[2] floating"
+        />
+        <div className="w-[85%] justify-self-center grid -bottom-2 absolute z-[0]">
+          <img src="main.webp" alt="" className=" justify-self-center z-[0]" />
+          <img
+            src="crown.webp"
+            alt=""
+            className="w-[30%] absolute z-[1] justify-self-center -mt-4"
+          />
+        </div>
         <img
           src="main-left.webp"
           alt=""
