@@ -22,17 +22,17 @@ export default function Home() {
         <img
           src="goat.webp"
           alt=""
-          className="w-[40%] absolute top-44 z-[2] floating pointer"
+          className="w-[40%] absolute top-[15%] z-[2] floating pointer"
         />
         <img
           src="ball.webp"
           alt=""
-          className="w-[40%] absolute right-0 top-64 z-[2] floating pointer"
+          className="w-[40%] absolute right-0 top-[30%] z-[2] floating pointer"
         />
         <img
           src="star.webp"
           alt=""
-          className="w-[40%] absolute right-0 top-16 z-[2] floating"
+          className="w-[40%] absolute right-0 top-[10%] z-[2] floating"
         />
         <div className="w-[85%] justify-self-center grid -bottom-2 absolute z-[0] pointer">
           <img src="main.webp" alt="" className=" justify-self-center z-[0]" />
@@ -54,8 +54,8 @@ export default function Home() {
         />
         <div className="w-[60%] h-[30%] absolute bottom-8 left-4 flex flex-col">
           <div className="h-1/5 flex gap-4 p-2">
-            <img src="position.webp" alt="" className="pointer"/>
-            <img src="age.webp" alt="" className="pointer"/>
+            <img src="position.webp" alt="" className="pointer z-[2]"/>
+            <img src="age.webp" alt="" className="pointer z-[2]"/>
           </div>
           <div className="h-4/5 -mt-6">
             <img src="main-text.webp" alt="" className="pointer"/>
