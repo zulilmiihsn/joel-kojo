@@ -6,6 +6,10 @@
   animation: floating 3s infinite ease-in-out;
 }
 
+.pointer {
+  @apply active:translate-y-1
+}
+
 .main-screen {
     @apply sm:w-[414px] w-[100vw] h-[100vh] bg-cover md:bg-contain bg-center relative overflow-hidden
 }

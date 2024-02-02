@@ -8,6 +8,7 @@ export default function Home() {
   return (
     <main className="main-screen bg-[url('/bg.webp')]">
       <div className="relative main-screen grid">
+      <img src="fire.gif" alt=""/>
         <h1
           className={`absolute top-8 inset-x-0 text-center text-white text-2xl tracking-[.50em] ${garamond.className}`}
         >
@@ -21,19 +22,19 @@ export default function Home() {
         <img
           src="goat.webp"
           alt=""
-          className="w-[40%] absolute top-44 z-[2] floating"
+          className="w-[40%] absolute top-44 z-[2] floating pointer"
         />
         <img
           src="ball.webp"
           alt=""
-          className="w-[40%] absolute right-0 top-64 z-[2] floating"
+          className="w-[40%] absolute right-0 top-64 z-[2] floating pointer"
         />
         <img
           src="star.webp"
           alt=""
           className="w-[40%] absolute right-0 top-16 z-[2] floating"
         />
-        <div className="w-[85%] justify-self-center grid -bottom-2 absolute z-[0]">
+        <div className="w-[85%] justify-self-center grid -bottom-2 absolute z-[0] pointer">
           <img src="main.webp" alt="" className=" justify-self-center z-[0]" />
           <img
             src="crown.webp"
@@ -44,20 +45,20 @@ export default function Home() {
         <img
           src="main-left.webp"
           alt=""
-          className="w-[50%] -right-4 bottom-0 absolute"
+          className="w-[50%] -right-4 bottom-0 absolute pointer"
         />
         <img
           src="main-right.webp"
           alt=""
-          className=" -left-32 bottom-24 absolute"
+          className=" -left-32 bottom-24 absolute pointer"
         />
         <div className="w-[60%] h-[30%] absolute bottom-8 left-4 flex flex-col">
           <div className="h-1/5 flex gap-4 p-2">
-            <img src="position.webp" alt="" />
-            <img src="age.webp" alt="" />
+            <img src="position.webp" alt="" className="pointer"/>
+            <img src="age.webp" alt="" className="pointer"/>
           </div>
           <div className="h-4/5 -mt-6">
-            <img src="main-text.webp" alt="" />
+            <img src="main-text.webp" alt="" className="pointer"/>
           </div>
         </div>
       </div>
