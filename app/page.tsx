@@ -1,68 +1,48 @@
-"use client";
-import { Londrina_Solid } from "next/font/google";
-import {
-  Crown,
-  DinamoSamarqand,
-  JoelBig,
-  Name,
-  SoundOff,
-  SoundOn,
-  TheGoat,
-} from "@/components/AllSVG";
-import { useState } from "react";
-
-const londrine = Londrina_Solid({
+import { EB_Garamond } from "next/font/google";
+const garamond = EB_Garamond({
   subsets: ["latin"],
-  weight: "400",
-});
+  weight: "700"
+})
 
 export default function Home() {
-  const [isOn, setIsOn] = useState(false);
-  function clickSound() {
-    setIsOn(!isOn);
-  }
-  const [isCrown, setIsCrown] = useState(false);
-  function clickCrown() {
-    setIsCrown(!isCrown);
-  }
   return (
-    <main className="main-screen bg-[url('/bg.png')]">
-      <div className="w-[60%] h-[27%] z-[3] absolute left-4 top-4 flex flex-col items-start gap-2">
-        <Name className="h-4/5" />
-        <div className="h-1/5 flex flex-row gap-3 justify-start items-center drop-shadow-2xl">
-          <DinamoSamarqand className="h-[60%] aspect-auto" />
-          <h1
-            className={`${londrine.className} text-[32px] font-bold text-white`}
-          >
-            FW
-          </h1>
-          <h1
-            className={`${londrine.className} text-[32px] font-bold text-white flex flex-row gap-1`}
-          >
-            25<p className="text-white font-bold">y.o</p>
-          </h1>
+    <main className="main-screen bg-[url('/bg.webp')]">
+      <div className="relative main-screen grid">
+        <h1 className={`absolute top-8 inset-x-0 text-center text-white text-2xl tracking-[.50em] ${garamond.className}`}>THE GOAT</h1>
+        <img src="button.webp" alt="" className="w-[8%] absolute left-2 -top-2 z-[2]" />
+        <img src="goat.webp" alt="" className="w-[40%] absolute top-44"/>
+        <img src="ball.webp" alt="" className="w-[40%] absolute right-0 top-64"/>
+        <img src="star.webp" alt="" className="w-[40%] absolute right-0 top-16"/>
+        <img
+          src="/crown.webp"
+          alt=""
+          className="w-[30%] justify-self-center top-[200px] absolute z-[1]"
+        />
+        <img
+          src="main.webp"
+          alt=""
+          className="w-[85%] justify-self-center -bottom-2 absolute z-[0]"
+        />
+        <img
+          src="main-left.webp"
+          alt=""
+          className="w-[50%] -right-4 bottom-0 absolute"
+        />
+        <img
+          src="main-right.webp"
+          alt=""
+          className=" -left-32 bottom-24 absolute"
+        />
+        <div className="w-[60%] h-[30%] absolute bottom-8 left-4 flex flex-col">
+          <div className="h-1/5 flex gap-4 p-2">
+            <img src="position.webp" alt="" />
+            <img src="age.webp" alt="" />
+          </div>
+          <div className="h-4/5 -mt-6">
+            <img src="main-text.webp" alt="" />
+          </div>
         </div>
       </div>
-      <JoelBig className="w-[420px] absolute right-0 -top-12 z-[2]" />
-      <button onClick={clickCrown} className={`absolute z-[2] right-6 rotate-[16deg] animate-pulse drop-shadow-xl transition ease-in-out ${isCrown ? "-top-6" : "top-2"}`}>
-      <Crown className={`w-32`}/>
-      </button>
-      <img
-        src="/kyrgyztan-flag.svg"
-        alt=""
-        className="w-full absolute z-[1] top-1/3 scale-[1.75]"
-      />
-      <img
-        src="/JoelKojoDrawing.webp"
-        className="z-[4] absolute bottom-16 -right-28 scale-[1.75] rotate-12"
-      />
-      <button
-        onClick={clickSound}
-        className="absolute z-10 h-1/5 w-1/2 left-0 bottom-72"
-      >
-        {isOn ? <SoundOn className="w-3/5" /> : <SoundOff className="w-3/5" />}
-      </button>
-      <TheGoat className="w-64 absolute z-[3] -left-2 bottom-6 rotate-3 shaking" />
     </main>
   );
 }
