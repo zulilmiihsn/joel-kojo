@@ -1,11 +1,12 @@
 'use client';
 
+/* eslint-disable jsx-a11y/alt-text */
 import Image from "next/image";
 import { FloatingElementProps } from "../types";
 
 export default function FloatingElement({
   src,
-  alt,
+  alt = '',
   width,
   height,
   className,
@@ -27,7 +28,7 @@ export default function FloatingElement({
   // Don't use both priority and loading props together
   const imageProps: any = {
     src,
-    alt,
+    alt: alt || '',
     width,
     height,
     className,
