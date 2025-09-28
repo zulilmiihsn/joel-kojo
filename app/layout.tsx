@@ -9,7 +9,7 @@ const garamond = EB_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Joel Kojo - The GOAT | Character Showcase",
+  title: "Joel Kojo - THE GOAT",
   description: "A tribute website showcasing Joel Kojo - The GOAT character. Fanmade by Zul Ilmi Ihsan. Experience the interactive character showcase with floating animations and modern design.",
   keywords: ["Joel Kojo", "The GOAT", "character showcase", "tribute", "interactive", "animation"],
   authors: [{ name: "Zul Ilmi Ihsan" }],
