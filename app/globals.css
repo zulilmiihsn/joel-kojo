@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure body and html support aspect ratio */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Center the main screen with aspect ratio */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
 .floating {
   animation: floating 3s infinite ease-in-out;
   will-change: transform;
@@ -38,40 +56,23 @@
 }
 
 .main-screen {
-    @apply w-[100vw] h-[100vh] bg-cover bg-center relative overflow-hidden;
+    @apply bg-cover bg-center relative overflow-hidden;
+    /* Force 11:25 aspect ratio (0.44) */
+    aspect-ratio: 11 / 25;
+    width: 100vw;
+    height: auto;
     max-width: 100vw;
     max-height: 100vh;
     min-width: 320px;
-    min-height: 568px;
+    min-height: 0;
 }
 
-/* Small screens - ensure no overflow */
+/* All screens - maintain 11:25 aspect ratio */
 @media (max-width: 389px) {
     .main-screen {
         width: 100vw;
-        height: 100vh;
-        max-width: 100vw;
-        max-height: 100vh;
-        transform: scale(0.85);
-        transform-origin: center center;
-    }
-}
-
-/* iPhone 12 Pro base design - maintain aspect ratio */
-@media (min-width: 390px) and (max-width: 428px) {
-    .main-screen {
-        width: 100vw;
-        height: 100vh;
-        max-width: 100vw;
-        max-height: 100vh;
-    }
-}
-
-/* Medium screens - scale to fit viewport */
-@media (min-width: 429px) and (max-width: 767px) {
-    .main-screen {
-        width: 100vw;
-        height: 100vh;
+        height: auto;
+        aspect-ratio: 11 / 25;
         max-width: 100vw;
         max-height: 100vh;
         transform: scale(0.9);
@@ -79,11 +80,33 @@
     }
 }
 
-/* Large screens - maintain proportions within viewport */
+@media (min-width: 390px) and (max-width: 428px) {
+    .main-screen {
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 11 / 25;
+        max-width: 100vw;
+        max-height: 100vh;
+    }
+}
+
+@media (min-width: 429px) and (max-width: 767px) {
+    .main-screen {
+        width: 100vw;
+        height: auto;
+        aspect-ratio: 11 / 25;
+        max-width: 100vw;
+        max-height: 100vh;
+        transform: scale(0.95);
+        transform-origin: center center;
+    }
+}
+
 @media (min-width: 768px) {
     .main-screen {
         width: 100vw;
-        height: 100vh;
+        height: auto;
+        aspect-ratio: 11 / 25;
         max-width: 100vw;
         max-height: 100vh;
         transform: scale(0.8);
